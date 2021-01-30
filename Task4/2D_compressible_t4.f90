@@ -31,7 +31,7 @@ program navierstokes
 !*******************************************
   !Name of the file for visualisation:
 990 format('vort',I4.4)
-  imodulo=1000 !snapshots to be saved every imodulo time steps
+  imodulo=2500 !snapshots to be saved every imodulo time steps
 
   ! AB2 temporal scheme itemp=1
   ! RK3 temporal scheme itemp=2
@@ -103,8 +103,8 @@ program navierstokes
         enddo
 
         !computation of the vorticity
-        call derix(vvv,nx,ny,tvv,xlx)
-        call deriy(uuu,nx,ny,tuu,yly)
+        call derix4(vvv,nx,ny,tvv,xlx)
+        call deriy4(uuu,nx,ny,tuu,yly)
         do j=1,ny
         do i=1,nx
            wz(i,j)=tvv(i,j)-tuu(i,j)
