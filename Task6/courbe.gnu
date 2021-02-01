@@ -1,6 +1,6 @@
 set terminal png
 set output 'v01.png'
-set xr[0:12] #0.025
+set xr[0:20] #0.025
 set yr[0:12]  #0.15
 set cbrange [-0.25:0.25]
 unset colorbox
@@ -25,7 +25,7 @@ reset
 
 set terminal png
 set output 'v02.png'
-set xr[0:12] #0.025
+set xr[0:20] #0.025
 set yr[0:12]  #0.15
 set cbrange [-0.25:0.25]
 unset colorbox
@@ -48,7 +48,7 @@ splot 'vort0002' u 1:2:3
 reset
 set terminal png
 set output 'v03.png'
-set xr[0:12] #0.025
+set xr[0:20] #0.025
 set yr[0:12]  #0.15
 set cbrange [-0.25:0.25]
 unset colorbox
@@ -71,7 +71,7 @@ splot 'vort0003' u 1:2:3
 reset
 set terminal png
 set output 'v04.png'
-set xr[0:12] #0.025
+set xr[0:20] #0.025
 set yr[0:12]  #0.15
 set cbrange [-0.25:0.25]
 unset colorbox

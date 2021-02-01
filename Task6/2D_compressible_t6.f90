@@ -8,7 +8,7 @@ program navierstokes
 !
   implicit none   !-->all the variables MUST be declared
 !
-  integer,parameter :: nx=513,ny=257,nt=7500,ns=3,nf=1,mx=nf*nx,my=nf*ny
+  integer,parameter :: nx=513,ny=257,nt=20000,ns=3,nf=1,mx=nf*nx,my=nf*ny
   !size of the computational domain (nx x ny) 
   !size of the exchanger (mx x my)
   !number of time step for the simulation
@@ -31,7 +31,7 @@ program navierstokes
 !*******************************************
   !Name of the file for visualisation:
 990 format('vort',I4.4)
-  imodulo=1500 !snapshots to be saved every imodulo time steps
+  imodulo=5000 !snapshots to be saved every imodulo time steps
 
   ! AB2 temporal scheme itemp=1
   ! RK3 temporal scheme itemp=2
@@ -684,7 +684,8 @@ subroutine initl(uuu,vvv,rho,eee,pre,tmp,rou,rov,roe,nx,ny,&
 !##########CYLINDER DEFINITION#########################################
   do j=1,ny
      do i=1,nx
-        if (((i*dlx-xlx/2.)**2+(j*dly-yly/2.)**2).lt.radius**2) then
+        !if (((i*dlx-xlx/2.)**2+(j*dly-yly/2.)**2).lt.radius**2) then
+        if (((i*dlx-5.)**2+(j*dly-yly/2.)**2).lt.radius**2) then
            eps(i,j)=1.
         else
            eps(i,j)=0.
