@@ -312,10 +312,6 @@ subroutine derix4(phi,nx,ny,dfi,xlx)
      dfi(nx,j)=udx*(phi(nx-2,j)-8.0*phi(nx-1,j)+8.0*phi(1,j)-phi(2,j))
   enddo
 	
-  
-	
-
-	
   return
 end subroutine derix4
 !############################################
